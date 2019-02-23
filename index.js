@@ -24,9 +24,10 @@ const server = http.createServer(function(req, res) {
     const filename = "./static" + q.pathname;
     fs.readFile(filename, function(err, data) {
         if (err) {
-            // If the required file does not exists then we will land here
-            res.writeHead(404, {'Content-Type': 'text/html'});
-            return res.end("404 Not Found");
+            /* 
+                Your task is to return 404 not found file
+                if the requested file does not exists
+            */
         }
 
         // If there is no error means we have got the file
