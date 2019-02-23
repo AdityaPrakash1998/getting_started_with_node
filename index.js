@@ -14,13 +14,13 @@ const port = 3000
 const helloRoutes = require('./routes/index');
 const bodyParser = require('body-parser');
 
-app.use('/', helloRoutes);
 
 // support json encoded bodies
 app.use(bodyParser.json());
 // support encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); 
 
+app.use('/', helloRoutes);
 app.get('*', function(req, res){
     return res.render('404')
 });
